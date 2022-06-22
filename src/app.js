@@ -51,5 +51,11 @@ function renderCard() {
     "head"
   ).innerHTML;
 }
+// 4.- Creamos botón para generar una carta aleatoriamente
 
-renderCard();
+//Al cargar la página generamos una carta y vamos generando una nueva cada 10s
+
+window.onload = renderCard();
+window.onload = setInterval(function() {
+  renderCard();
+}, 10000);

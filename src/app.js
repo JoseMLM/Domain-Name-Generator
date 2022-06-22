@@ -5,7 +5,6 @@ import "./style.css";
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
-let color = "";
 let valores = ["2", "3", "4", "5", "6", "7", "8", "9", "J", "Q", "K", "A"];
 let simbolos = [
   {
@@ -39,7 +38,8 @@ function generarValor() {
 // 2.- Generamos símbolo aleatorio y devolvemos tanto el símbolo como la clase:
 function generarSimbolo() {
   let indice = Math.floor(Math.random() * 4);
-  color = simbolos[indice].color;
+  document.getElementById("head").classList.add(simbolos[indice].color);
+  document.getElementById("footer").classList.add(simbolos[indice].color);
   return simbolos[indice].icono;
 }
 
@@ -53,4 +53,3 @@ function renderCard() {
 }
 
 renderCard();
-document.write(color);

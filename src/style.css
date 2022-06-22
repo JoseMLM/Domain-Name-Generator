@@ -21,16 +21,16 @@ body {
 #center {
   text-align: center;
   height: 80%;
-  padding-top: 35%;
-  font-size: 65px;
-  font-weight: bold;
+  padding-top: 33%;
+  font-size: 75px;
 }
 #footer {
   height: 10%;
   font-size: 60px;
   position: relative;
   left: 80%;
-  bottom: 13%;
+  top: 3%;
+  transform: rotateX(180deg);
 }
 
 .red {

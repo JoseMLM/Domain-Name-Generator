@@ -32,6 +32,8 @@ let simbolos = [
   }
 ];
 
+//Funciones para alterar el tamaña de la carta
+
 function setWidth() {
   const ancho = document.getElementById("campoAncho");
   document.getElementById("card").style.width = ancho.value + "px";
@@ -44,6 +46,8 @@ function setHeight() {
   alto.value = "";
 }
 
+//----------------------------------------------
+
 // 1.- Generamos un valor random para la carta
 function generarValor() {
   let indice = Math.floor(Math.random() * 12);
@@ -53,8 +57,10 @@ function generarValor() {
 // 2.- Generamos símbolo aleatorio y devolvemos tanto el símbolo como la clase:
 function generarSimbolo() {
   let indice = Math.floor(Math.random() * 4);
-  document.getElementById("head").classList.add(simbolos[indice].color);
-  document.getElementById("footer").classList.add(simbolos[indice].color);
+
+  // usamos className para setear la clase, ya que si usamos add, añadimos una y otra vez al darle al botón y siempre queda negro
+  document.getElementById("head").className = simbolos[indice].color;
+  document.getElementById("footer").className = simbolos[indice].color;
   return simbolos[indice].icono;
 }
 

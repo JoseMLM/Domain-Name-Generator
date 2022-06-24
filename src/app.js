@@ -34,10 +34,14 @@ let simbolos = [
 
 function setWidth() {
   const ancho = document.getElementById("campoAncho");
-
   document.getElementById("card").style.width = ancho.value + "px";
-
   ancho.value = "";
+}
+
+function setHeight() {
+  const alto = document.getElementById("campoAlto");
+  document.getElementById("card").style.height = alto.value + "px";
+  alto.value = "";
 }
 
 // 1.- Generamos un valor random para la carta
@@ -80,11 +84,23 @@ btn.addEventListener("click", function() {
 // 6.- Introducir altura y anchura de la carta
 // Detectamos la acción del usuario tanto clickando al botón como pulsando la tecla enter
 
+//Para el ancho
 ancho.addEventListener("click", function(e) {
   setWidth();
 });
 document.getElementById("campoAncho").addEventListener("keydown", function(e) {
   if (e.keyCode == 13) {
     setWidth();
+  }
+});
+
+//Para el alto
+alto.addEventListener("click", e => {
+  setHeight();
+});
+
+document.getElementById("campoAlto").addEventListener("keydown", function(e) {
+  if (e.keyCode == 13) {
+    setHeight();
   }
 });

@@ -5,6 +5,9 @@ import "./style.css";
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
+const ancho = document.getElementById("ancho");
+const alto = document.getElementById("alto");
+
 let valores = ["2", "3", "4", "5", "6", "7", "8", "9", "J", "Q", "K", "A"];
 let simbolos = [
   {
@@ -28,6 +31,14 @@ let simbolos = [
     color: "black"
   }
 ];
+
+function setWidth() {
+  const ancho = document.getElementById("campoAncho");
+
+  document.getElementById("card").style.width = ancho.value + "px";
+
+  ancho.value = "";
+}
 
 // 1.- Generamos un valor random para la carta
 function generarValor() {
@@ -59,3 +70,21 @@ window.onload = renderCard();
 window.onload = setInterval(function() {
   renderCard();
 }, 10000);
+
+// 5.- Generamos nueva carta al pulsar el botón
+const btn = document.getElementById("btn");
+btn.addEventListener("click", function() {
+  renderCard();
+});
+
+// 6.- Introducir altura y anchura de la carta
+// Detectamos la acción del usuario tanto clickando al botón como pulsando la tecla enter
+
+ancho.addEventListener("click", function(e) {
+  setWidth();
+});
+document.getElementById("campoAncho").addEventListener("keydown", function(e) {
+  if (e.keyCode == 13) {
+    setWidth();
+  }
+});

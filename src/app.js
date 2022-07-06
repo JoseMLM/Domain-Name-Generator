@@ -66,3 +66,5 @@ const btn = document.getElementById("btn");
 btn.addEventListener("click", function() {
   renderCard();
 });
+
+window.onload = () => renderCard();
